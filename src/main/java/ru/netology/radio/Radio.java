@@ -14,19 +14,23 @@ public class Radio {
         currentVolumeRadio=newCurrentVolumeRadio;
     }
     public void setToMaxVolumeRadio(){
-        currentVolumeRadio=100;
+        currentVolumeRadio= 100;
     }
     public void setToMinVolumeRadio(){
         currentVolumeRadio=0;
     }
     public void increaseVolumeRadio(){
-        if(currentVolumeRadio<=100){
+        if (currentVolumeRadio < 100) {
             currentVolumeRadio++;
+        } else {
+            currentVolumeRadio = 100;
         }
     }
-    public void reduceVolumeRadio(){
-        if(currentVolumeRadio<=100){
+    public void reduceVolumeRadio() {
+        if (currentVolumeRadio > 0) {
             currentVolumeRadio--;
+        } else {
+            currentVolumeRadio = 0;
         }
     }
 }
