@@ -1,28 +1,7 @@
 package ru.netology.radio;
 public class Radio {
-    public int currentRadioStation;
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < 0) {
-            currentRadioStation = 9;
-        }
-        if (newCurrentRadioStation > 9) {
-            currentRadioStation = 0;
-        }
-        currentRadioStation = newCurrentRadioStation;
-    }
-
-    public void setToMaxRadioStation() {
-        currentRadioStation = 9;
-    }
-
-    public void setToMinRadioStation() {
-        currentRadioStation = 0;
-    }
+    private int currentRadioStation;
+    private int currentVolumeRadio;
 
     public void increaseRadioStation() {
         if (currentRadioStation <= 9) {
@@ -40,7 +19,36 @@ public class Radio {
         }
     }
 
-    public int currentVolumeRadio;
+    public void increaseVolumeRadio() {
+        if (currentVolumeRadio < 100) {
+            currentVolumeRadio++;
+        } else {
+            currentVolumeRadio = 100;
+        }
+    }
+
+    public void reduceVolumeRadio() {
+        if (currentVolumeRadio > 0) {
+            currentVolumeRadio--;
+        } else {
+            currentVolumeRadio = 0;
+        }
+    }
+
+
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
+    }
+
+    public void setCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation < 0) {
+            currentRadioStation = 9;
+        }
+        if (newCurrentRadioStation > 9) {
+            currentRadioStation = 0;
+        }
+        currentRadioStation = newCurrentRadioStation;
+    }
 
     public int getCurrentVolumeRadio() {
         return currentVolumeRadio;
@@ -56,6 +64,15 @@ public class Radio {
         currentVolumeRadio = newCurrentVolumeRadio;
     }
 
+
+    public void setToMaxRadioStation() {
+        currentRadioStation = 9;
+    }
+
+    public void setToMinRadioStation() {
+        currentRadioStation = 0;
+    }
+
     public void setToMaxVolumeRadio() {
         currentVolumeRadio = 100;
     }
@@ -64,18 +81,5 @@ public class Radio {
         currentVolumeRadio = 0;
     }
 
-    public void increaseVolumeRadio() {
-        if (currentVolumeRadio < 100) {
-            currentVolumeRadio++;
-        } else {
-            currentVolumeRadio = 100;
-        }
-    }
-    public void reduceVolumeRadio() {
-        if (currentVolumeRadio > 0) {
-            currentVolumeRadio--;
-        } else {
-            currentVolumeRadio = 0;
-        }
-    }
+
 }
