@@ -3,6 +3,17 @@ import org.junit.jupiter.api.Test;
 import ru.netology.radio.Radio;
 
 public class RadioTest {
+
+    @Test
+    public void shouldSetRadioStationIfStationsCount10() {
+        Radio radio = new Radio(10);
+        radio.setCurrentRadioStation(8);
+        int expected = 8;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
     @Test
     public void shouldSetRadioStation() {
         Radio radio = new Radio();
